@@ -302,7 +302,7 @@
    <para>
     Do not modify the profile settings in the files listed above. To define your
     own custom &pk; settings, use
-    <filename>/etc/polkit-default-privs.local</filename>. For details, refer to
+    <filename>/etc/polkit-default-privs/local. For details, refer to
     <xref linkend="sec-security-polkit-change-modify-config-implicit"/>.
    </para>
   </sect2>
@@ -487,7 +487,7 @@ polkit.addRule(function(action, subject) {
     As described in <xref linkend="sec-security-polkit-policies-default"/>,
     &suse; ships different override profiles for the &pk; implicit authorization
     settings defined by the upstream developers. Custom privileges can be defined
-    in <filename>/etc/polkit-default-privs.local</filename>. Privileges defined
+    in <filename>/etc/polkit-default-privs/local. Privileges defined
     here always take precedence over the predefined profile settings.
     To add a custom privilege setting, do the following:
    </para>
@@ -495,7 +495,7 @@ polkit.addRule(function(action, subject) {
     <title>Modifying default privileges</title>
     <step>
      <para>
-      Edit <filename>/etc/polkit-default-privs.local</filename>. To define a
+      Edit <filename>/etc/polkit-default-privs/local. To define a
       privilege, add a line for each action in the following format:
      </para>
 <screen><replaceable>&lt;action-id&gt;</replaceable>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<replaceable>&lt;auth_any&gt;</replaceable>:<replaceable>&lt;auth_inactive&gt;</replaceable>:<replaceable>&lt;auth_active&gt;</replaceable></screen>
@@ -512,7 +512,7 @@ polkit.addRule(function(action, subject) {
      <para>
       Run this tool as &rootuser; for the changes to take effect:
      </para>
-     <screen>&prompt.root;<command>/sbin/set_polkit_default_privs</command></screen>
+     <screen>&prompt.root;<command>/usr/sbin/set_polkit_default_privs</command></screen>
     </step>
    </procedure>
    <para>
